@@ -1,0 +1,434 @@
+package schuelerworkshop;
+
+import lejos.robotics.navigation.TachoPilot;
+import lejos.robotics.navigation.Pilot;
+import lejos.nxt.Button;
+import lejos.nxt.ButtonListener;
+import lejos.nxt.Motor;
+import lejos.nxt.SensorPort;
+import lejos.nxt.SensorPortListener;
+import lejos.nxt.Sound;
+import lejos.nxt.TouchSensor;
+
+/** 
+ * original Dateiname: GeekName.txt    ( ͡° ͜ʖ ͡°)﻿
+ * 
+ * Wir schreiben ein Programm in einzelnen Zeilen. Das uns der NXT
+ * versteht müssen wir Anweisungen in folgende vorbereitete Struktur
+ * schreiben.
+ * 
+ * @author Stefan Gehrmann
+ *
+ * Bitte ändere doch gleich den Namen der "class" in Dein Vornamen um
+ * damit sie ein Java Programm wird. Um sich mit den vielen Dateien später
+ * zurechtzufinden muss ein gut passender 
+ * Name der Datei als auch der Name der Klasse gewählt werden.
+ * 
+ * Wenn Du dein Vornamen nimmst wissen wir auch wer hier programmiert hat :-)
+ */ 
+public class Stefans_GeekName {  //1.Anpassung
+	public static void main(String[] args) {
+		Stefans_GeekName meinProgramm = new Stefans_GeekName(); //2.3.Anpassung
+		System.out.println("--= d[-__-]b =--﻿");
+		System.out.println("Stefan"); // am besten nicht mehr als 16 Zeichen 4.Anpassung
+		System.out.println("o()xxxx[{::::::>");
+		System.out.println(" ");
+		System.out.println(" ");
+		meinProgramm.pilot = new TachoPilot(56, 165, Motor.A, Motor.C); // Bitte Anpassen! Am Gerät messen.
+		try{
+			meinProgramm.run(); // entferne bitte // am Anfang dieser Zeile 5.Anpassung
+			/**
+			 * Die Restlichen Anweisungen geben Dir die Gelegenheit nach Ablauf Deines Programms
+			 * noch eine Weile auf das Display zu schauen um letzte geschriebene Infos abzulesen
+			 * Danach ist dann aber das Programm am ende und der NXT wird das Menü wieder anzeigen
+			 * Um die Baterien zu schonen schaltet sich das Gerät im Menü nach einer weile aus
+			 * Bitte lasse Dein Programm nicht unbeobachtet laufen weil dann eventuell nach Stunden
+			 * Die Akkus leer sind
+			 * Stoppe den NXT mit drücken der orangen und grauen Taste gleichzeitig. DANKE -`ღ´-
+			 */
+			System.out.println("Programmende ;-)");
+			Thread.sleep(5000);
+		}catch(Exception e){
+			/*
+			 * Wenn Du folgene Text auf der NXT Anzeige siehst
+			 * Kontroliere Deinen Code es gab ein Fehler!
+			 */
+			System.out.println("Fehler im Code");	
+		}
+	}
+
+	/**
+	 * pilot ist der Name deines Roboters dem Du Befehle erteilen kannst.
+	 */
+	Pilot pilot;
+	/**
+	 * Dieses ist Dein Schaltpult in dem Du den Ablauf steuerst.
+	 * Es gibt bereits einige Vorgaben die Du ersteinmal ausprobieren kannst.
+	 * Danach wirst Du dann eigene Anweisungen weiter unten selbst schreiben.
+	 */
+	private void run() throws Exception{
+		// -----------------------------------------------------------------	
+		// rufte Deine eigenen Funktionen auf setze oder entferne // am Anfang der Zeile
+		meineFunktion();
+		//meineAnweisungen();
+		//wiederholeAllesWasIchAnweise(); 
+		/** Bei vorhergehende Zeile gibt es kein Ende deaktiviere die Zeile wenn es danach weiter gehen soll */
+		//<--hier löschen bis -->|wiederholeVonBis(1,3);
+		//schaltMichEinUndSchaltMichAus(); // Beachte ebenfalls endlos
+		//beruehreMich();                    // endlos mit nur ein Taster
+		//vorUndZurueckB();                     // endlos mit nur ein Taster
+		//vorUndZurueckPilot();                     // endlos mit nur ein Taster
+		tastEreignisse(true);
+		// -----------------------------------------------------------------	
+		/* 
+		 * hier folgen nun Methoden mit Ereignissbehandlung so dass dein Bot
+		 * auf Tastendrücke reagieren kann und Du nur noch die Methoden 
+		 * schreiben musst was passieren soll wenn Tasten gedrückt losgelassen 
+		 * oder kombiniert werden
+		 * 
+		 */
+		//tastEreignisse(true);            // Tastsensoren anzeigen wenn gedrückt
+		//demoESCAPEmeineZweite(); // die Funktion meineZweite() ist noch leer! 
+		//tueIrgendwas();                      
+		//vorTueIrgendwas();  // beinhaltet whileProgramIsRunningTueIrgendwas() und tastEreignisse()		
+		// -----------------------------------------------------------------	
+	} // end of run
+	
+// °º¤ø,¸¸,ø¤º°`°º¤ø,¸,ø¤°º¤ø,¸¸,ø¤º°`°º¤ø,¸¸,ø¤º°`°º¤ø,¸,ø¤°º¤ø,¸¸,ø¤º°`°º¤ø,
+	/**
+	 * In Dieser Funktion kannst Du dir selbst was ausdenken 
+	 * lösche einfach die Zeile testFunktion() 
+     * schreibe selbst 3-5 Zeilen mit dem Objekt pilot 
+     * pilot. und dann travel(); rotate(); arc();
+     * (nach dem Punkt bekommst Du eine Auswahl was es sonst so gibt)
+	 */
+	private void meineFunktion() {
+		// schreibe hier eine Folge von Anweisungen was der NXT tun soll!
+		System.out.println("JENNY & PAPA SPILEN ZUSAMEN UND WIR FEUEN UNS  AUCH");
+		System.out.println("<meineFunktion>");
+
+		//testFunktion();
+		wiederholeVonBis(5,7);
+	} // Das Ende von meineFunktion 
+// °º¤ø,¸¸,ø¤º°`°º¤ø,¸,ø¤°º¤ø,¸¸,ø¤º°`°º¤ø,¸¸,ø¤º°`°º¤ø,¸,ø¤°º¤ø,¸¸,ø¤º°`°º¤ø,
+
+	/**
+	 * Entscheidung
+	 * Tue was wenn ... ansonsten tue das ...
+	 * 
+	 * ------------------------------------------------------------------
+	 * Achte bei dieser Funktion wird davon ausgegangen dass ein Taster 
+	 * auf S2
+	 * -------------------------------------------------------------------
+	 */	
+	private void beruehreMich() {
+		TouchSensor vorne  = new TouchSensor(SensorPort.S2);
+		TouchSensor hinten = new TouchSensor(SensorPort.S3);
+
+		System.out.println("beruehreMich"); 		
+		while (true) {
+			if(vorne.isPressed()) {
+				if(Motor.B.isMoving())
+					Motor.B.stop();
+				else
+					Motor.B.forward();
+			}			
+			if(hinten.isPressed()) {
+				if(Motor.B.isMoving())
+					Motor.B.stop();
+				else
+					Motor.B.backward();
+			}			
+		}	
+	}
+
+	private void wiederholeVonBis(int von,int bis) {
+		int index;
+		for(index=von; index <= bis; index++) {
+			// lösche oder ändere folgende Zeile und scheibe weitere Anweisungen!
+			System.out.println("Index ist "+index);
+			System.out.println("Was soll ich tun");
+		}
+	}	
+		
+	private void wiederholeAllesWasIchAnweise() {
+		System.out.println("Stop den NXT mit");
+		System.out.println("oranger & grauer");
+		System.out.println("Tasten zusammen!");		
+		while(true) {
+			meineAnweisungen();
+		}
+	}
+
+	private void meineAnweisungen() {
+		//pilot.arc(100,360);
+		pilot.travel(100);
+	}
+	
+	
+	/**
+	 * Fahre in die andere Richtung wenn
+	 * ------------------------------------------------------------------
+	 * Achte bei dieser Funktion wird davon ausgegangen dass ein Taster 
+	 * auf S2 sowie auf S3 als Eingang vorhanden sind !!!! 
+	 * -------------------------------------------------------------------
+	 */	
+	private void vorUndZurueckB() {
+		TouchSensor vorne  = new TouchSensor(SensorPort.S2);
+		TouchSensor hinten = new TouchSensor(SensorPort.S3);
+		
+		System.out.println("beruehreMich"); 		
+		while (true) {
+			if(vorne.isPressed()) {
+				Motor.B.backward();
+			}
+			
+		    if(hinten.isPressed()){
+		    	Motor.B.forward();
+			}			
+			System.out.println("S2:"+vorne.isPressed() + "S3:"+hinten.isPressed()); 
+		}	
+	}
+	
+	private void vorUndZurueckPilot() {
+		TouchSensor vorne  = new TouchSensor(SensorPort.S2);
+		TouchSensor hinten = new TouchSensor(SensorPort.S3);
+		
+		System.out.println("beruehreMich"); 		
+		while (true) {
+			if(vorne.isPressed()) {
+				pilot.backward();
+			}
+			
+		    if(hinten.isPressed()){
+		    	pilot.forward();
+			}			
+			System.out.println("S2:"+vorne.isPressed() + "S3:"+hinten.isPressed()); 
+		}	
+	}
+	
+	/**
+	 * Du kannst auch selbst neue Funktionen erstellen schreiben
+	 * Es ist von Vorteil sich ein guten Namen dafür auszudenken
+	 * oder schreibe einfach was und gib dem Anweisungsblock 
+	 * nachträglich einen neuen passenden Namen und ändere auch die Stellen
+	 * wo sie aufgerufen werden z.B. in run() oder meineFunktion()
+	 */
+	private void meineAnweisungen2() {
+		pilot.travel(300);
+		pilot.rotate(90);
+	}
+
+	/**
+	 * Einer der oft verwendeten Programmstrukturen ist eine Entscheidung
+	 * Tue was wenn ... (optional auch mit else falls nötig)
+	 * 
+	 * ------------------------------------------------------------------
+	 * Achte bei dieser Funktion wird davon ausgegangen dass ein Moter an
+	 * Ausgang B angeschlossen ist
+	 * und die Taster auf S2 sowie auf S3 als eingang vorhanden sind !!!! 
+	 * -------------------------------------------------------------------
+	 * 
+	 * Schau hier wie es geht!
+	 */
+	private void schaltMichEinUndSchaltMichAus() {
+		// erstellt Berührungssensoren mit dem Namen 'touchMe' und 'touchTo'o
+		TouchSensor touchMe = new TouchSensor(SensorPort.S2);
+		TouchSensor touchTo = new TouchSensor(SensorPort.S3);
+
+		// das ist eine Endlosschleife die den Code immer weiter wiederholt
+		while (true) {
+			// hier kommt das hin was wiederholt werden soll
+			System.out.println(""); 
+			
+			// mit den IF-Anweisungen kannst Du Werte prüfen. touchMe.isPressed()==true
+			// um so zum Beispiel nur wenn eine Taste gedrückt ist folgene Anweisungen zu tun
+			if(touchMe.isPressed()) {
+				Motor.B.forward();
+				System.out.println("S2:"+touchMe.isPressed());
+			}
+			if(touchTo.isPressed()) {
+				Motor.B.stop();
+				System.out.println("S2:"+touchTo .isPressed());
+			}
+			// mit folgender Zeile kannst Du anzeigen lassen wie der Wert für 
+			// s1 und s2 gerade ist (sogar mehrmals in der Sekunde)
+			System.out.println("S2:"+touchMe.isPressed() + "S3:"+touchTo.isPressed()); 
+		}	
+	}
+	
+
+	
+// -----------------------------------------------------------------	
+	/**
+	 * 
+	 */
+	int counter = 1;
+	private void tueIrgendwas() throws Exception {
+		// -----------------------------------------------------------------	
+		//System.out.println("tueIrgendwas"+counter);
+		counter++;
+		Motor.B.rotate(counter);
+
+		// -----------------------------------------------------------------	
+		
+	}
+
+	private void vorTueIrgendwas() throws Exception {
+		// -----------------------------------------------------------------	
+		tastEreignisse(false); // Ausgabe der Tastenevents auf dem NXT
+		System.out.println("S1-S4+ESCAPE+ENTER");
+		whileProgramIsRunningTueIrgendwas(); // ESCAPE und ENTER loop
+	}
+// -----------------------------------------------------------------	
+	
+	/**********************************************************************
+	 *                                                                    *
+	 * Probiere den folgenden Code, schau ihn dir an vielleicht kannst Du *
+	 * Teile verwenden in deinen eigennen Funktion                        *
+	 *                                                                    *
+	 **********************************************************************/
+	boolean runProgram = true;
+	boolean enterPressed = false;
+	private void whileProgramIsRunningTueIrgendwas() throws Exception{
+		
+		Button.ENTER.addButtonListener(
+			new ButtonListener() {
+				public void buttonPressed(Button arg0) {
+					// Flag setzen
+					enterPressed = true;
+				}
+				public void buttonReleased(Button arg0) {
+					// Programm beenden
+					runProgram = false;
+				}
+			}
+		);
+		
+		Button.ESCAPE.addButtonListener(
+			new ButtonListener() {
+				public void buttonPressed(Button arg0) {
+					System.exit(0); // Stopt Programm sofort
+				}
+				public void buttonReleased(Button arg0) {
+					// is never called
+				}
+			}
+		);		
+		
+		while(runProgram) {
+			if(enterPressed) {
+				Sound.playTone(0, 2, 5);
+				System.out.println("r:"+runProgram+" e:"+enterPressed);
+			}
+			//tue etwas... bis ENTER Button (orangene Taste) gedrückt wird
+			tueIrgendwas();
+		}
+		System.out.println("while-Ende");
+	}
+	
+	private void demoESCAPE() throws Exception {
+		System.out.println("Demofunktion");
+	
+		// so lange bis escape button gedrueckt ist
+		while(!Button.ESCAPE.isPressed()) {
+			testFunktion();
+			Thread.sleep(10); // absturz verhindern
+		}
+	}
+/**********************************************************************/	
+	// Sensor initialisieren, dies muss man beim TouchSensor nicht machen, 
+	//	bei Licht oder Ultraschall macht es aber Sinn um deren Funktion zu aktivieren
+	private TouchSensor touch = new TouchSensor(SensorPort.S1);
+
+	private void tastEreignisse(boolean mitWhile) throws Exception {
+		// Listener für jeden Taster hinzufügen
+		SensorPort.S1.addSensorPortListener(touchSensorListener);
+		SensorPort.S2.addSensorPortListener(touchSensorListener);
+		SensorPort.S3.addSensorPortListener(touchSensorListener);
+		SensorPort.S4.addSensorPortListener(touchSensorListener);
+		
+		System.out.println("Taste druecken!");
+		// Wenn man sonst nichts weiter macht, muss man das Programm am laufen halten:
+		while(mitWhile && !Button.ESCAPE.isPressed()) {
+			Thread.sleep(10); // nichts tun warten bis jemand drückt!
+		}		
+	}
+	
+	// den SensorPortListener bauen kan mehrfach verwendet werden
+	private SensorPortListener touchSensorListener = new SensorPortListener() {
+		
+		/** 
+		 * diese Methode wird jedesmal aufgerufen, wenn die Roh-Werte des Sensors sich verändern.
+		 */
+		@Override
+		public void stateChanged(SensorPort port, int oldValue, int newValue) {
+			
+			// hiermit kann man sich einen Eindruck verschaffen, wie oft diese Methode aufgerufen wird und mit welchen Werten.
+//			System.out.println(oldValue + "      " + newValue); 
+			
+			// wie man sieht ändert sich der Wert manchmal nur geringfügig, 
+			// d.h. für den TouchSensor würde z.B. folgende Abfrage Sinn machen:
+			if(oldValue > 500 && newValue < 500) {
+				onTouchPress(port);
+			} else if(oldValue < 500 && newValue > 500) {
+				onTouchRelease(port);
+			}
+		}
+		
+	};
+	
+	/** 
+	 * wird aufgerufen wenn ein TouchSensor gedrückt wird
+	 */
+	protected void onTouchPress(SensorPort port) {
+		System.out.println("S"+port.getId()+" gedrueckt!");
+		ausweichen();
+	}
+	
+	/** 
+	 * wird aufgerufen wenn ein TouchSensor wieder losgelassen wird
+	 */
+	protected void onTouchRelease(SensorPort port) {
+		System.out.println("S"+port.getId()+" losgelassen");
+		
+	}
+	/**********************************************************************/	
+	
+
+// -----------------------------------------------------------------		
+	/**
+	 * Die ersten Befehle welche auf dem Tisch und sogar mit 
+	 * eingesteckten Kabel gestartet werden können
+	 * 
+	 * Schau Dir gleich mal genau an welche der Anweisungen für Dich interessant sind
+	 * und kopiere oder schreibe sie so oben in meineFinktion() rein
+	 */
+	private void testFunktion() {
+		System.out.println("Speed="+pilot.getMoveSpeed());
+		pilot.setMoveSpeed(20); // normal ist 176 maximalspeed findest Du mit getMoveMaxSpeed()
+		System.out.println("MaxS?=");
+		pilot.travel(100);		
+		pilot.setMoveSpeed(200);
+		pilot.travel(-150);
+		
+		System.out.println("TSpeed="+pilot.getTurnSpeed());
+		System.out.println("TS Max="+pilot.getTurnMaxSpeed());
+		pilot.rotate(180); 
+		pilot.setTurnSpeed(20); // normal war 130 
+		pilot.rotate(-180);		
+	}
+	
+	private void ausweichen() {
+		pilot.travel(-100);
+	//	pilot.rotate(180);
+
+		//for( int i=0; i < counter; i++) {
+			//pilot.travel(10);
+			pilot.rotate(360*counter);
+		//}
+		counter++;
+		pilot.forward();
+	//	pilot.setSpeed(10*counter);
+	}
+} // end of Class
